@@ -204,6 +204,10 @@ def get_settings():
 def status():
     return jsonify({"status": "server is running!"})
 
+@app.route("/")
+def index():
+    return "Welcome to Devika AI"
+
 if __name__ == "__main__":
     logger.info("Devika is up and running!")
     socketio.run(app, debug=False, port=1337, host="0.0.0.0")

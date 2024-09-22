@@ -101,9 +101,9 @@
   <div class="expandable-input relative">
     <textarea
       id="message-input"
-      class="w-full p-4 font-medium focus:text-foreground rounded-xl outline-none h-28 pr-20 bg-secondary
-    {$isSending ? 'cursor-not-allowed' : ''}"
-      placeholder="Type your message..."
+      class="w-full p-4 font-medium focus:text-foreground rounded-xl outline-none h-28 pr-20 bg-secondary transition-colors duration-200 ease-in-out
+    {$isSending ? 'cursor-not-allowed opacity-50' : 'hover:bg-secondary-hover'}"
+      placeholder="Give Devika a task to work on..."
       disabled={$isSending}
       bind:value={messageInput}
       on:input={setTokenSize}
@@ -118,14 +118,15 @@
     <button
       on:click={handleSendMessage}
       disabled={$isSending}
-      class="absolute text-secondary bg-primary p-2 right-4 bottom-6 rounded-full
-    {$isSending ? 'cursor-not-allowed' : ''}"
+      class="absolute text-secondary bg-primary p-2 right-4 bottom-6 rounded-full transition-colors duration-200 ease-in-out
+    {$isSending ? 'cursor-not-allowed opacity-50' : 'hover:bg-primary-dark'}"
     >
       {@html Icons.CornerDownLeft}
     </button>
     <p class="absolute text-tertiary p-2 right-4 top-2">
       <span class="token-count">0</span>
     </p>
+    <span class="absolute text-xs text-tertiary left-4 bottom-2">Shift + Enter to add a newline</span>
   </div>
 </div>
 

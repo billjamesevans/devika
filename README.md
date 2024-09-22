@@ -71,7 +71,7 @@ Version's requirements
 
 ### Installation
 
-To install Devika, follow these steps:
+To install Devika on a Raspberry Pi, follow these steps:
 
 1. Clone the Devika repository:
    ```bash
@@ -81,39 +81,17 @@ To install Devika, follow these steps:
    ```bash
    cd devika
    ```
-3. Create a virtual environment and install the required dependencies (you can use any virtual environment manager):
+3. Run the setup script to configure the Raspberry Pi environment:
    ```bash
-   uv venv
-   
-   # On macOS and Linux.
-   source .venv/bin/activate
+   ./setup_raspberry_pi.sh
+   ```
+4. The setup script will automatically install dependencies, configure the system, and start the Devika service. If everything is working fine, you should see the following output:
+   ```bash
+   Raspberry Pi environment setup complete. Devika should now be accessible on your local network.
+   ```
+5. Access the Devika web interface by opening a browser and navigating to `http://<Raspberry_Pi_IP>:1337`, replacing `<Raspberry_Pi_IP>` with the actual IP address of your Raspberry Pi.
 
-   # On Windows.
-   .venv\Scripts\activate
-
-   uv pip install -r requirements.txt
-   ```
-4. Install the playwright for browsering capabilities:
-   ```bash
-   playwright install --with-deps # installs browsers in playwright (and their deps) if required
-   ```
-5. Start the Devika server:
-   ```bash
-   python devika.py
-   ```
-6. if everything is working fine, you see the following output:
-   ```bash
-   root: INFO   : Devika is up and running!
-   ```
-7. Now, for frontend, open a new terminal and navigate to the `ui` directory:
-   ```bash
-   cd ui/
-   bun install
-   bun run start
-   ```
-8. Access the Devika web interface by opening a browser and navigating to `http://127.0.0.1:3001`
-
-### how to use
+### How to Use
 
 To start using Devika, follow these steps:
 
